@@ -1,0 +1,11 @@
+* Create React App 설치: 터미널에서 다음 명령어를 실행한다.
+npx create-react-app project-name --template typescript
+
+* node.modules 받는법
+npm install
+
+App.tsx - 실제 화면을 보여주는 영역
+
+터미널에서 ctrl+c 누르면 꺼짐
+
+확장 - ES7+ React/Redux/React-Native snippets 설치
