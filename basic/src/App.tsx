@@ -2,7 +2,9 @@ import React from 'react';
 import './App.css';
 import Component from './component/Component';
 import Sample from './component/Sample';
-import SignInContainer from './component/example/SingInContainer';
+import SignInContainer from './component/example/SignInContainer';
+import CurlyBraces from './component/CurlyBraces';
+import Properties from './component_manage/Properties';
 
 // JSX / TSX :
 // JSX (JavaScript XML) / TSX (TypeScript XML)
@@ -75,6 +77,9 @@ function App() {
       {/* <Component />
       <Sample /> */}
       <SignInContainer />
+      
+      {/* <CurlyBraces /> */}
+      {/* <Properties /> */}
     </>
   );
 }
