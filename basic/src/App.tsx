@@ -11,6 +11,7 @@ import Event from './interaction/EventComponent';
 import EventComponent from './interaction/EventComponent';
 import SignUpContainer from './component_manage/example/SignUpContainer';
 import StateComponent from './interaction/StateComponent';
+import ForwordingStateComponent from './interaction/ForwordingStateComponent';
 
 // JSX / TSX :
 // JSX (JavaScript XML) / TSX (TypeScript XML)
@@ -88,7 +89,8 @@ function App() {
       {/* <Properties /> */}
       {/* <ListRendering /> */}
       {/* <EventComponent /> */}
-      <StateComponent />
+      {/* <StateComponent /> */}
+      <ForwordingStateComponent />
     </>
   );
 }
