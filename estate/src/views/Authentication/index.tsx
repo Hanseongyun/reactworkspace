@@ -5,19 +5,23 @@ import SignInBackground from 'assets/image/sign-in-background.png';
 import SignUpBackground from 'assets/image/sign-up-background.png';
 import InputBox from 'components/Inputbox';
 
+//                    type                    //
 type AuthPage = 'sign-in' | 'sign-up'         // | 유니온
 
+//                    interface                    //
 interface SnsContainerProps {
   title: string;
 }
 
+//                    component                    //
 function SnsContainer ({title}: SnsContainerProps) {
 
+  //                    event handler                    //
   const onSnsButtonClickHandler = (type: 'kakao' | 'naver') => {
       alert(type);
   };
 
-
+  //                    render                    //
   return (
     <div className="authentication-sns-container">
         <div className="sns=container-title label">{title}</div>
@@ -29,6 +33,7 @@ function SnsContainer ({title}: SnsContainerProps) {
   );
 }
 
+//                    interface                    //
 interface Props {
 
   onLinkClickHandler: () => void
@@ -38,9 +43,11 @@ interface Props {
 //                        component                           //
 function SignIn({onLinkClickHandler}: Props) {         // Authentication에 선언된 onLinkClickHander를  sign-in에서 쓰기위해 Props 이용
 
+  //                    state                    //
   const [id, setId] = useState<string>('');
   const [password, setPassword] = useState<string>('');
 
+  //                    event handler                    //
   const onIdChangeHandler = (event:ChangeEvent<HTMLInputElement>) => {
     setId(event.target.value);
   };
@@ -76,9 +83,11 @@ function SignIn({onLinkClickHandler}: Props) {         // Authentication에 선�
 //                        component                           //
 function SignUp({onLinkClickHandler} : Props) {
 
+  //                    state                    //
   const [id, setId] = useState<string>('');
   const [idButtonStatus, setIdButtonStatus] = useState<boolean>(false);
 
+  //                    event handler                    //
   const onIdChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
     const{value} = event.target;   // target이라는 오브젝트에 value속성 > 구조화파괴
     setId(value);
@@ -155,21 +164,25 @@ function SignUp({onLinkClickHandler} : Props) {
   
 }
 
-
+//                    component                    //
 export default function Authentication() {
 
+  //                    state                    //
   const [page, setPage] = useState<AuthPage>('sign-in');      // 훅함수(use..)는 반드시 컴포넌트 안에(바로아래)에 선언되어야 함
 
+  //                    event handler                    //
   const onLinkClickHander = () => {
     if (page === 'sign-in') setPage('sign-up');
     else setPage('sign-in');
   };
 
+  //                    constant                    //
   const AuthenticationContents = page === 'sign-in' ? <SignIn onLinkClickHandler={onLinkClickHander}/> : 
                                                       <SignUp onLinkClickHandler={onLinkClickHander}/>;
 
   const imageBoxStyle = {backgroundImage: `url(${page === 'sign-in' ? SignInBackground : SignUpBackground})`};
 
+  //                    render                    //
   return (
     <div id="authentication-warpper">
       <div className="authentication-image-box" style={imageBoxStyle}></div>
