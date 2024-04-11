@@ -25,7 +25,6 @@
     align-items: center;
     gap: 24px;
     width: 380px;
-    height: 523px;
 }
 
 .authentication-title {
@@ -66,3 +65,10 @@
 
 }
 
+.kakao-button {
+    background-image: url('../../assets/image/kakao-button.png');
+}
+
+.naver-button {
+    background-image: url('../../assets/image/naver-button.png');
+}
