@@ -10,11 +10,16 @@ export interface InputBoxProps {
     buttonTitle?: string;
     buttonStatus?: boolean;         // 필수가 아니면 ?
     onButtonClickHandler?: () => void;      // 매개변수x 반환타입x, 필수아님
+    message?: string;
+    error?: boolean;
 }
 
-export default function InputBox({label, type, value, placeholder, onChangeHander ,buttonTitle, buttonStatus, onButtonClickHandler}: InputBoxProps) {
+export default function InputBox({label, type, value, placeholder, onChangeHander ,buttonTitle, buttonStatus, 
+    onButtonClickHandler, message, error}: InputBoxProps) {
 
     const buttonClass = buttonStatus ? 'input-primary-button' : 'input-disable-button';
+
+    const messageClass = 'input-message ' + (error ? 'error' : 'primary');
 
     return (
         <div className="input-box">
@@ -27,7 +32,9 @@ export default function InputBox({label, type, value, placeholder, onChangeHande
                 </div>
                 }
             </div>
-        <div className="input-message"></div>
+        <div className={messageClass}>
+            {message}
+        </div>
     </div>
     );
 }
