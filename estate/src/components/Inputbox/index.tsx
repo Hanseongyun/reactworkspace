@@ -6,7 +6,7 @@ export interface InputBoxProps {
     type: 'text' | 'password';
     value: string;
     placeholder: string;
-    onChangeHander: (event:ChangeEvent<HTMLInputElement>) => void;
+    onChangeHandler: (event:ChangeEvent<HTMLInputElement>) => void;
     buttonTitle?: string;
     buttonStatus?: boolean;         // 필수가 아니면 ?
     onButtonClickHandler?: () => void;      // 매개변수x 반환타입x, 필수아님
@@ -14,7 +14,7 @@ export interface InputBoxProps {
     error?: boolean;
 }
 
-export default function InputBox({label, type, value, placeholder, onChangeHander ,buttonTitle, buttonStatus, 
+export default function InputBox({label, type, value, placeholder, onChangeHandler ,buttonTitle, buttonStatus, 
     onButtonClickHandler, message, error}: InputBoxProps) {
 
     const buttonClass = buttonStatus ? 'input-primary-button' : 'input-disable-button';
@@ -25,7 +25,7 @@ export default function InputBox({label, type, value, placeholder, onChangeHande
         <div className="input-box">
             <div className="input-label label">{label}</div>
             <div className="input-content-box">
-                <input className="input" type={type} value={value} placeholder={placeholder} onChange={onChangeHander} />
+                <input className="input" type={type} value={value} placeholder={placeholder} onChange={onChangeHandler} />
                 {buttonTitle &&
                 <div className={buttonClass} onClick={onButtonClickHandler}>
                     {buttonTitle}

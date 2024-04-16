@@ -1,0 +1,41 @@
+4/16
+*CustomHook
+
+107 게시물
+
+한 페이지 게시물 5개씩 보여줌
+페이지네이션을 한 섹션당 10개를 보여줌
+
+총 페이지 수 : 22
+totalPageCount = boardCount / 5
+if (pageCount % 5 !==0) totalPageCount++;
+
+totalPageCount  = Math.floor((boardCount - 1) / 5) + 1		// Math.floor(내림)
+
+총 섹션 수 : 3
+totalSectionCount  = Math.floor((totalpageCount - 1) / 10) + 1
+totalSectionCount  = Math.floor((boardCount - 1) / (5 * 10)) + 1
+
+[a0, a1, a2, a3, a4, a5, a6, ... ,a104, a105, a106]
+1 = [a0 ~ a4]
+2 = [a5 ~ a9]
+3 = [a10 ~ a14]
+...
+21 = [a100 ~ a104]
+22 = [a105, a106]
+
+currentPageStart = 5*(page -1)
+currentPageEnd = 5*page -1
+
+viewList = [];
+for (index = currentPageStart; index <= currentPageEnd; ++)
+    if (index >= boardList.length) break;
+    viewList.push(boardList[index])
+
+currentSectionStart = 10*section - 9
+currentSectionEnd = 10*section
+
+viewPageList = []
+for (index = currentSectionStart; index <= currentSectionEnd; ++)
+    if (totalpageCount < index) break;
+    viewPageList.push(index)
