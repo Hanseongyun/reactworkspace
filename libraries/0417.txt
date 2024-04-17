@@ -1,0 +1,8 @@
+npx create-react-app libraries --template typescript
+
+zustand / react-router
+
+google- npm검색
+
+npm i zustand
+npm i react-router
